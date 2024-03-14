@@ -8,7 +8,7 @@ const users = [
   { id: 'root', password: process.env.PASSWORD_2 },
 ];
 
-async function consultarCEP(cep: string) {
+async function checkZipCode(cep: string) {
   try {
     const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
     const data = response.data;
@@ -34,4 +34,4 @@ function checkCredentials(id: string, password: string) {
   return !!user;
 }
 
-export { consultarCEP, checkCredentials };
+export { checkZipCode, checkCredentials };
