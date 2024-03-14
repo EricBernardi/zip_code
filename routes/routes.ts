@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { consultarCEP } from '../utils/utils';
+import { checkZipCode } from '../utils/utils';
 import NodeCache from 'node-cache';
 
 const router = express.Router();
@@ -27,7 +27,7 @@ router.post('/:cep', async (req: Request, res: Response) => {
   let dataCep = cache.get(cacheKey);
 
   if (!dataCep) {
-    dataCep = await consultarCEP(cep);
+    dataCep = await checkZipCode(cep);
 
     cache.set(cacheKey, dataCep, 300);
 

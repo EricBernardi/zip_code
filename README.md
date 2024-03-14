@@ -1,30 +1,30 @@
-Projeto Node.js
+# Projeto Node.js
 
-Clone o repositório:
+<strong>PRIMEIROS PASSOS</strong>
 
-git clone https://github.com/EricBernardi/zip_code.git
+- `Clone o repositório`: git clone https://github.com/EricBernardi/zip_code.git
 
-Instale as dependências:
+- `Instale as dependências`: npm install
 
-npm install
+- `Crie um arquivo .env na raiz do projeto e adicione a seguinte linha, substituindo sua-chave-secreta pela sua chave secreta`: PASSWORD_1=sua-chave-secreta, PASSWORD_2=outra-chave-secreta
 
-Crie um arquivo .env na raiz do projeto e adicione a seguinte linha, substituindo sua-chave-secreta pela sua chave secreta:
+<strong>USO</strong>
 
-PASSWORD_1=sua-chave-secreta
-PASSWORD_2=outra-chave-secreta
+- `Compile o código`: npx tsc
 
-USO
+- `Inicie o servidor`: npm start
 
-Inicie o servidor:
+- `Faça uma requisição para obter dados de um CEP (Preferivel que seja utilizado o Postman ou Insomnia) (substitua seu-cep-aqui pelo CEP desejado)`: curl -u admin:password -X POST http://localhost:3000/seu-cep-aqui
 
-npm start
+- `Usando o Postman`: É necessário inserir a URL e acessar a aba *Authorization* com o tipo definido como Basic Auth, após isso preencher o campo de *Username* com o id do usuário e também o campo *Password* com a respectiva senha.
 
-Faça uma requisição para obter dados de um CEP (Preferivel que seja utilizado o Postman ou Insomnia) (substitua seu-cep-aqui pelo CEP desejado):
+*Observação: substitua - password - pela chave que você adicionou no .env.*
 
-curl -u admin:password -X POST http://localhost:3000/seu-cep-aqui
+<strong>EXEMPLO DE REQUISIÇÃO</strong>
 
-Observação: substitua <password> pela chave que você adicionou no .env.
+- `curl -u admin:password -X POST` http://localhost:3000/89021001
 
-Exemplo de Requisição
 
-curl -u admin:password -X POST http://localhost:3000/01001000
+# Tecnologias utilizadas
+
+- `Node.js`
